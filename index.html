@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      />
+      <!-- incorporating  font awesome, go to cdnjs.com and search font-awesome
+        then copy the link here  -->
+  </head>
+  <body>
+    <div class="timer">
+      <div class="controls">
+        <input id="duration" value="3" />
+        <div>
+          <button id="start"><i class="fas fa-play"></i></button>
+          <button id="pause"><i class="fas fa-pause"></i></button>
+        </div>
+      </div>
+      <svg class="dial">
+        <circle
+          fill="transparent"
+          stroke="green"
+          stroke-width="15"
+          r="190"
+          cx="0"
+          cy="200"
+          transform="rotate(-90 100 100)"
+        />
+      </svg>
+    <!-- this is how  we'll get our fancy timer border. this is how we get a shape
+    height and width gives us a square of 200. then we made it a circle with certain radius and
+    x and y axis. elements inside must be less than 200 bc it has to be within the square.
+    see section 213 for details. if it's outside the svg, we cant see it
+    dash array gives us a gap. offset negative will move the negative spae
+    clockwise.to make the start point on top, rotate sounter clockwise 90 deg.
+    100 100 and the center point of the circle
+    every time timer ticks, offset needs to be more negative
+        565 dasharray is 2*pi*radius:
+            stroke-dasharray="565"
+            stroke-dashoffset="-50"
+-->
+
+    </div>
+
+    <script src="timer.js"></script>
+    <script src="index.js"></script>
+        <!-- timer.js needs to be run before the index -->
+  </body>
+</html>
